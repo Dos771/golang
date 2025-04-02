@@ -11,7 +11,9 @@ func main () {
 
 	// array()
 	// slice()
-	mapExm()
+	//mapExm()
+
+	DeferMultiplyExample()
 }
 
 func stringExample() {
@@ -229,4 +231,59 @@ func mapExm () {
 
 	fmt.Printf("sorted:%v\n", sortedMap)
 
+
+	fmt.Printf("\n ----Example 12----\n")
+
+	mySet := make(map[string]struct{})
+
+    // Добавляем элементы
+    mySet["apple"] = struct{}{}
+    mySet["banana"] = struct{}{}
+
+    // Проверяем наличие элемента
+    if _, exists := mySet["apple"]; exists {
+        fmt.Println("apple присутствует в множестве")
+    }
+
+    // Удаление элемента
+    delete(mySet, "apple")
+
+    // Проверяем снова
+    if _, exists := mySet["apple"]; !exists {
+        fmt.Println("apple удален из множества")
+    }
+
+}
+
+
+
+var try func(string, int) string
+
+func Do(a string, b int) string { 
+	return ""
+}
+
+func NotDo(x string, y int) (a string) {
+	return 
+}
+
+func ExistUnnamed(x, z string, y int) (string, bool, error) {
+	return "", false, nil
+}
+
+func Exist(x, z string, y int) (a string, ok bool) {
+	return
+}
+
+func DeferExample() {
+	defer fmt.Printf("end")
+
+	fmt.Printf("start")
+}
+
+func DeferMultiplyExample() {
+	defer fmt.Printf("end1\n")
+	defer fmt.Printf("end2\n")
+
+	fmt.Printf("start\n")
 }
